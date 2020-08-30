@@ -1,0 +1,20 @@
+http:201.151.79.30:8080:MX:Mexico
+https:207.144.111.230:8080:US:United States
+https:103.199.84.121:8080:BD:Bangladesh
+http:103.113.197.11:8080:BD:Bangladesh
+https:41.79.197.150:8080:SO:Somalia
+https:118.173.232.5:34413:TH:Thailand
+https:119.15.82.222:37790:KH:Cambodia
+https:41.72.203.182:42928:KE:Kenya
+http:90.189.209.127:80:RU:Russian Federation
+http:80.91.17.113:41258:RU:Russian Federation
+https:190.109.167.9:57608:CO:Colombia
+https:42.112.34.30:3430:VN:Vietnam
+http:176.104.52.46:47578:UA:Ukraine
+https:49.0.82.190:8080:TH:Thailand
+http:36.89.193.109:31390:ID:Indonesia
+http:81.33.4.214:61711:ES:Spain
+https:212.24.148.234:36087:CZ:Czech Republic
+http:186.232.15.9:45849:BR:Brazil
+https:190.152.125.250:42043:EC:Ecuador
+http:194.186.249.22:41434:RU:Russian Federation
