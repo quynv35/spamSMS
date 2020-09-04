@@ -4,7 +4,7 @@
 import requests
 import json
 
-def sms(phone,msg):
+def sms(phone,msg): #phone = 84943687522
 	url = "https://sms-international.p.rapidapi.com/WebTool/SMStoCountry/sms84"
 	querystring = {"phonenum":"","msg":""}
 	querystring["msg"] = msg
@@ -17,6 +17,7 @@ def sms(phone,msg):
 	result = response.json()["msg"].split("|")[0]
 	data = "{0}\n{1}\n{2}\n".format(phone,msg,result)
 	return(data)
+
 
 phone = input(">_ Phone : ")
 msg = input(">_ Message : ")
