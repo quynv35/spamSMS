@@ -29,7 +29,21 @@ def airbnb(phone): #phone = 84943687522
 	res = requests.post(link, json = data)
 	return(res, res.text)
 
-phone = input(">_ Phone : ")
+def rapidapi(phone): #phone = 84943687522
+# https://rapidapi.com/wipple/api/wipple-sms-verify-otp/
+	phone = "84"+phone[1:]
+	url = "https://wipple-sms-verify-otp.p.rapidapi.com/send"
+	payload = "{\n    \"app_name\": \"exampleapp\",\n    \"code_length\": 30,\n    \"code_type\": \"number\",\n    \"expiration_second\": 86000,\n    \"phone_number\": \"xxxPHONExxx\"\n}"
+	payload = payload.replace("xxxPHONExxx",phone)
+	headers = {
+	    'content-type': "application/json",
+	    'x-rapidapi-key': "0cc733e278mshc6dfccfbf2203f6p16914djsnc108e3d901f5",
+	    'x-rapidapi-host': "wipple-sms-verify-otp.p.rapidapi.com"
+	    }
+	response = requests.request("POST", url, data=payload, headers=headers)
+	return(response.text)
 
+phone = input(">_ Phone : ")
+print(rapidapi(phone))
 print(grab(phone))
 print(airbnb(phone))

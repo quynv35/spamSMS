@@ -4,21 +4,20 @@
 import requests
 import json
 
-def sms(phone,msg): #phone = 84943687522
-	url = "https://sms-international.p.rapidapi.com/WebTool/SMStoCountry/sms84"
-	querystring = {"phonenum":"","msg":""}
-	querystring["msg"] = msg
-	querystring["phonenum"] = "84"+phone[1:]
-	headers = {
-	    'x-rapidapi-host': "sms-international.p.rapidapi.com",
-	    'x-rapidapi-key': "9ad14197e0mshb760b7991e634fcp11f307jsnbc7ca7452483"
-	    }
-	response = requests.request("GET", url, headers=headers, params=querystring)
-	result = response.json()["msg"].split("|")[0]
-	data = "{0}\n{1}\n{2}\n".format(phone,msg,result)
-	return(data)
+# https://rapidapi.com/wipple/api/wipple-sms-verify-otp/
 
+def sms(phone): #phone = 84943687522
+	phone = "84"+phone[1:]
+	url = "https://wipple-sms-verify-otp.p.rapidapi.com/send"
+	payload = "{\n    \"app_name\": \"exampleapp\",\n    \"code_length\": 6,\n    \"code_type\": \"number\",\n    \"expiration_second\": 86000,\n    \"phone_number\": \"xxxPHONExxx\"\n}"
+	payload = payload.replace("xxxPHONExxx",phone)
+	headers = {
+	    'content-type': "application/json",
+	    'x-rapidapi-key': "0cc733e278mshc6dfccfbf2203f6p16914djsnc108e3d901f5",
+	    'x-rapidapi-host': "wipple-sms-verify-otp.p.rapidapi.com"
+	    }
+	response = requests.request("POST", url, data=payload, headers=headers)
+	print(response.text)
 
 phone = input(">_ Phone : ")
-msg = input(">_ Message : ")
-print(sms(phone,msg))
+print(sms(phone))

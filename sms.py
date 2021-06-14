@@ -251,5 +251,5 @@ def tgdd(phone): #phone = 0943687522
 	res = requests.post(link,json=json)
 	return(res,res.text)
 
-phone = "0345133151"
+phone = "0913433155" #phuong khi
 
