@@ -28,3 +28,10 @@ while True:
 	count = count + 1
 	print(count,forgotpw(phone))
 
+
+# link = "https://daihoc.fpt.edu.vn/user/xac-thuc-so-dien-thoai.php?mobile=0917249501"
+
+
+
+
+

