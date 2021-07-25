@@ -1,8 +1,0 @@
-git clone https://github.com/3UMOBKA/SMS-Bomber-300-Free
-git clone https://github.com/anubhavanonymous/XLR8_BOMBER
-git clone https://github.com/MaksPV/AresBomb
-git clone https://github.com/HACK3RY2J/Anon-SMS.git
-git clone https://github.com/FSystem88/spymer
-git clone https://github.com/TheSpeedX/TBomb.git
-git clone https://github.com/batiscuff/duplo-bomber
-git clone https://github.com/mishakorzik/anonymousSMS
